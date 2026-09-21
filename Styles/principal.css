@@ -1,0 +1,243 @@
+/* Paleta de colores oficial de Dracula */
+:root {
+    --drac-bg: #282A36;
+    --drac-current: #44475A;
+    --drac-fg: #F8F8F2;
+    --drac-comment: #6272A4;
+    --drac-cyan: #8BE9FD;
+    --drac-green: #50FA7B;
+    --drac-orange: #FFB86C;
+    --drac-pink: #FF79C6;
+    --drac-purple: #BD93F9;
+    --drac-red: #FF5555;
+    --drac-yellow: #F1FA8C;
+}
+
+/* Configuraciones generales */
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: var(--drac-bg);
+    color: var(--drac-fg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    max-width: 800px; /* Limita el ancho para que parezca una app centrada */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Títulos */
+h1 {
+    color: var(--drac-pink);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: var(--drac-green);
+    border-bottom: 2px solid var(--drac-comment);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+h3 {
+    color: var(--drac-cyan);
+    margin-top: 30px;
+}
+
+/* Separadores */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--drac-current);
+    margin: 25px 0;
+}
+
+/* Seguridad para elementos ocultos con atributo 'hidden' */
+[hidden] {
+    display: none !important;
+}
+
+/* --- SECCIÓN DE SESIÓN --- */
+#sesion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--drac-current);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+#estado-sesion {
+    color: var(--drac-yellow);
+    font-weight: bold;
+}
+
+/* --- MENÚ DE NAVEGACIÓN --- */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav button {
+    background-color: var(--drac-bg);
+    color: var(--drac-fg);
+    border: 2px solid var(--drac-comment);
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+nav button:hover {
+    border-color: var(--drac-pink);
+    color: var(--drac-pink);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* --- TARJETAS (Secciones principales) --- */
+section {
+    background-color: var(--drac-current);
+    border: 2px solid var(--drac-comment);
+    border-radius: 1.5rem;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- FORMULARIOS (Inputs, Textareas y Labels) --- */
+label {
+    color: var(--drac-cyan);
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="file"],
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--drac-bg);
+    color: var(--drac-fg);
+    border: 1px solid var(--drac-comment);
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+::placeholder {
+    color: var(--drac-comment);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--drac-pink);
+    box-shadow: 0px 0px 8px 1px rgba(255, 121, 198, 0.4);
+}
+
+textarea {
+    resize: vertical; /* Permite cambiar el alto pero no el ancho */
+}
+
+input[type="file"] {
+    padding: 10px;
+    background-color: var(--drac-current);
+}
+
+/* --- BOTONES DE ACCIÓN --- */
+button[id^="btn-agregar"] {
+    background-color: var(--drac-purple);
+    color: var(--drac-bg);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button[id^="btn-agregar"]:hover {
+    background-color: var(--drac-pink);
+    color: var(--drac-fg);
+}
+
+button[id^="btn-agregar"]:active, 
+#btn-login:active, 
+#btn-logout:active {
+    transform: scale(0.98);
+}
+
+#btn-login {
+    background-color: var(--drac-green);
+    color: var(--drac-bg);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Botones de alerta (Cerrar sesión, Borrar) */
+#btn-logout,
+#btn-borrar-horario {
+    background-color: var(--drac-red);
+    color: var(--drac-fg);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btn-logout:hover,
+#btn-borrar-horario:hover {
+    background-color: #ff7070;
+    box-shadow: 0 0 10px var(--drac-red);
+}
+
+/* --- LISTAS Y CONTENEDORES DE RESULTADOS --- */
+#lista-tareas,
+#lista-notas {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Estilo que el JS puede aplicarle a las tareas agregadas */
+#lista-tareas li, 
+#lista-notas > div {
+    background-color: var(--drac-bg);
+    border-left: 4px solid var(--drac-purple);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Imagen del horario */
+#horario-imagen {
+    border: 2px solid var(--drac-comment);
+    border-radius: 10px;
+    margin-top: 15px;
+    display: block; /* Para centrar la imagen */
+    margin-left: auto;
+    margin-right: auto;
+}

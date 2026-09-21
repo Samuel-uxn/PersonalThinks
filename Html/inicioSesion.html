@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/estilo_inicio.css">
+    <title>Inicio de sesion</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inicio-sesion">
+            <h2>Iniciar Sesion</h2>
+            <p>Correo electronico o numero de celular</p>
+            <input type="text" id="inIdentificador" placeholder="Ingrese correo electronico o numero de celular">
+            
+            <p>Contraseña</p>
+            <input type="password" id="inContrasena" placeholder="Ingrese contraseña">
+
+            <p id="mensaje" role="alert"></p>
+            
+            <button id="btnEntrar">Iniciar Sesion</button>
+            <button id="btnCrearCuenta" class="btn-secundario">Crear cuenta nueva</button>
+        </div>
+    </div>
+
+    <script type="module" src="../Script/Inicio.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* Paleta de colores oficial de Dracula */
+:root {
+    --drac-bg: #282A36;
+    --drac-current: #44475A;
+    --drac-fg: #F8F8F2;
+    --drac-comment: #6272A4;
+    --drac-cyan: #8BE9FD;
+    --drac-green: #50FA7B;
+    --drac-pink: #FF79C6;
+    --drac-purple: #BD93F9;
+}
+
+body {
+    margin: 0;
+    background-color: var(--drac-bg);
+    color: var(--drac-fg);
+    font-family: Arial, sans-serif;
+}
+
+.container {
+     width: 100%;
+     min-height: 100vh; /* Para centrar el formulario verticalmente en la pantalla */
+     display: flex;
+     justify-content: center;
+     align-items: center; /* Centrado vertical */
+     padding: 20px;
+     box-sizing: border-box;
+}
+
+.inicio-sesion {
+    background-color: var(--drac-current);
+    border: 3px solid var(--drac-comment);
+    border-radius: 2rem;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px; /* Un poco más angosto que el de registro */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna de forma ordenada */
+}
+
+.inicio-sesion h2 {
+    color: var(--drac-green);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.inicio-sesion p {
+    color: var(--drac-cyan);
+    margin-bottom: 8px;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.inicio-sesion input {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--drac-bg);
+    color: var(--drac-fg);
+    border: 1px solid var(--drac-comment);
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+}
+
+::placeholder {
+    color: var(--drac-comment);
+}
+
+.inicio-sesion input:focus {
+    outline: none;
+    border-color: var(--drac-pink);
+    box-shadow: 0px 0px 8px 1px rgba(255, 121, 198, 0.4);
+}
+
+/* Estilo para el botón principal (Iniciar Sesión) */
+.inicio-sesion button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px;
+    background-color: var(--drac-purple);
+    color: var(--drac-bg);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.inicio-sesion button:hover {
+    background-color: var(--drac-pink);
+    color: var(--drac-fg);
+}
+
+.inicio-sesion button:active {
+    transform: scale(0.98);
+}
+
+/* Estilo para el botón secundario (Crear cuenta nueva) */
+.inicio-sesion .btn-secundario {
+    margin-top: 15px;
+    background-color: var(--drac-comment);
+    color: var(--drac-fg);
+}
+
+.inicio-sesion .btn-secundario:hover {
+    background-color: var(--drac-cyan);
+    color: var(--drac-bg);
+}

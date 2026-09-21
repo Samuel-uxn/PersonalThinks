@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/estilo_registro.css">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="registro">
+            <h2>Empieza con tu registro</h2>
+            <p><strong>Nombre</strong></p>
+            <div class="nombres">
+                <input type="text" id="inNombre" placeholder="Nombre">
+                <input type="text" id="inApellido" placeholder="Apellido">
+            </div>
+            <div class="numero_correo">
+                <p><strong>Numero de celular o correo</strong></p>
+                <input type="text" id="inCelular" placeholder="Celular o correo">
+            </div>
+            <div class="contraseña">
+                <p><strong>Contraseña</strong></p>
+                <input type="password" id="inContraseña" placeholder="Contraseña (mínimo 6 caracteres)">
+            </div>
+
+            <p id="mensaje" role="alert"></p>
+
+            <div class="btnRegistrar">
+                <button id="btnRegistro">Registrar</button>
+            </div>
+            <p><a href="inicio.html">Ya tengo cuenta</a></p>
+        </div>
+    </div>
+
+    <script type="module" src="../Script/Registro.js"></script>
+</body>
+</html>

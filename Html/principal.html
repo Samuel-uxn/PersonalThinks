@@ -1,11 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../Styles/principal.css">
+  <title>Mi organizador académico</title>
 </head>
 <body>
-    
+
+  <h1>Mi organizador académico</h1>
+
+  <!-- SESIÓN -->
+  <div id="sesion">
+    <span id="estado-sesion"></span>
+    <button id="btn-logout" type="button">Cerrar sesión</button>
+  </div>
+
+  <hr>
+
+  <!-- MENÚ -->
+  <nav>
+    <button type="button" data-seccion="tareas">Tareas</button>
+    <button type="button" data-seccion="notas">Notas</button>
+    <button type="button" data-seccion="horario">Horario</button>
+  </nav>
+
+  <hr>
+
+  <!-- ==================== TAREAS ==================== -->
+  <section id="tareas">
+    <h2>Tareas</h2>
+
+    <div>
+      <p>
+        <label for="tarea-titulo">Actividad:</label><br>
+        <input type="text" id="tarea-titulo" placeholder="Ej: Taller de cálculo">
+      </p>
+      <p>
+        <label for="tarea-nota">Nota / descripción:</label><br>
+        <textarea id="tarea-nota" rows="3" cols="40" placeholder="Detalles de la actividad"></textarea>
+      </p>
+      <p>
+        <label for="tarea-fecha">Fecha de entrega:</label><br>
+        <input type="date" id="tarea-fecha">
+      </p>
+      <button type="button" id="btn-agregar-tarea">Agregar tarea</button>
+    </div>
+
+    <h3>Mis tareas</h3>
+    <ul id="lista-tareas"></ul>
+  </section>
+
+  <!-- ==================== NOTAS ==================== -->
+  <section id="notas" hidden>
+    <h2>Notas</h2>
+
+    <div>
+      <p>
+        <label for="nota-titulo">Título:</label><br>
+        <input type="text" id="nota-titulo" placeholder="Ej: Clase de física">
+      </p>
+      <p>
+        <label for="nota-texto">Nota:</label><br>
+        <textarea id="nota-texto" rows="6" cols="40" placeholder="Escribe tu nota aquí"></textarea>
+      </p>
+      <button type="button" id="btn-agregar-nota">Guardar nota</button>
+    </div>
+
+    <h3>Mis notas (por fecha)</h3>
+    <div id="lista-notas"></div>
+  </section>
+
+  <!-- ==================== HORARIO ==================== -->
+  <section id="horario" hidden>
+    <h2>Horario académico</h2>
+
+    <p>
+      <label for="horario-archivo">Sube la imagen de tu horario:</label><br>
+      <input type="file" id="horario-archivo" accept="image/*">
+    </p>
+    <p id="horario-mensaje"></p>
+    <img id="horario-imagen" alt="Horario académico" style="max-width:100%" hidden>
+    <p><button type="button" id="btn-borrar-horario" hidden>Borrar horario</button></p>
+  </section>
+
+
+<script type="module" src="../Script/App.js"></script>
+
 </body>
 </html>

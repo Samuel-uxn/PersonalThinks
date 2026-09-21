@@ -1,0 +1,126 @@
+/* Paleta de colores oficial de Dracula */
+:root {
+    --drac-bg: #282A36;
+    --drac-current: #44475A;
+    --drac-fg: #F8F8F2;
+    --drac-comment: #6272A4;
+    --drac-cyan: #8BE9FD;
+    --drac-green: #50FA7B;
+    --drac-pink: #FF79C6;
+    --drac-purple: #BD93F9;
+}
+
+body {
+    margin: 0;
+    background-color: var(--drac-bg);
+    color: var(--drac-fg);
+    font-family: Arial, sans-serif;
+}
+
+.container {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     padding: 20px;
+     box-sizing: border-box;
+}
+
+.registro {
+    background-color: var(--drac-current);
+    border: 3px solid var(--drac-comment);
+    border-radius: 2rem;
+    padding: 30px;
+    margin: 20px;
+    width: 100%;
+    max-width: 500px; /* Mejor que un width fijo al 60% */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.registro h2 {
+    color: var(--drac-green);
+    text-align: center;
+    margin-top: 0;
+}
+
+.registro p {
+    color: var(--drac-cyan);
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* Agrupamos los divs para darles un margen inferior constante */
+.nombres, .numero_correo, .contraseña {
+    margin-bottom: 20px;
+}
+
+.nombres {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Agrupamos los inputs para no repetir código */
+.nombres input,
+.contraseña input,
+.numero_correo input {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--drac-bg); /* Fondo oscuro para el input */
+    color: var(--drac-fg); /* Texto claro al escribir */
+    border: 1px solid var(--drac-comment);
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Color de los textos de ejemplo (placeholders) */
+::placeholder {
+    color: var(--drac-comment);
+}
+
+/* Efecto al hacer clic (focus) en cualquier input */
+.nombres input:focus,
+.contraseña input:focus,
+.numero_correo input:focus {
+    outline: none;
+    border-color: var(--drac-pink);
+    box-shadow: 0px 0px 8px 1px rgba(255, 121, 198, 0.4);
+}
+
+.btnRegistrar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.registro button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--drac-purple);
+    color: var(--drac-bg); /* Letra oscura para contrastar con el morado */
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.registro button:hover {
+    background-color: var(--drac-pink);
+    color: var(--drac-fg);
+}
+
+/* Efecto al presionar el botón */
+.registro button:active {
+    transform: scale(0.98);
+}
+
+/* Ajuste para pantallas pequeñas (celulares) */
+@media (max-width: 500px) {
+    .nombres {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
